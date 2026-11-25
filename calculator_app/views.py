@@ -51,7 +51,6 @@ def calculation_history(request):
     return JsonResponse({'history': history})
 
 
-
 @require_POST
 def clear_history(request):
     Calculation.objects.all().delete()

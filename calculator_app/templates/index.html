@@ -15,20 +15,23 @@
         {% csrf_token %}
     </form>
 
-    <div class="container">
+<div class="container">
 
-        <h1>My Simple Calculator</h1>
+    <h1>My Simple Calculator</h1>
+
+    <button id="history-btn" type="button">History</button>
+
+    <div class="main-content">
 
         <div class="calculator">
-
             <input type="text" id="display" value="0" readonly>
 
             <div class="buttons">
-
                 <button data-action="clear">C</button>
                 <button data-action="delete">DEL</button>
                 <button data-operator="/">/</button>
                 <button data-operator="*">*</button>
+                <button data-action="equals">=</button>
 
                 <button data-number="7">7</button>
                 <button data-number="8">8</button>
@@ -43,25 +46,23 @@
                 <button data-number="1">1</button>
                 <button data-number="2">2</button>
                 <button data-number="3">3</button>
-                <button data-action="equals">=</button>
+             
 
                 <button data-number="0">0</button>
                 <button data-action="decimal">.</button>
-
             </div>
-
         </div>
 
+        <section class="history" id="history-panel">
+            <h2>Calculation History</h2>
+            <button id="clear-history-btn" type="button">Clear History</button>
+            <ul id="history-list">
+                <li>Loading history...</li>
+            </ul>
+        </section>
+
     </div>
-
-    <section class ="history">
-        <h2>Calculation History</h2>
-        <button id ="clear-history-btn" type="button">Clear History</button>
-        <ul id ="history-list">
-            <li>Loding history...</li>
-        </ul>
-    </section>
-
+</div>
     <script src="{% static 'calculator_app/script.js' %}">
 
     </script>
